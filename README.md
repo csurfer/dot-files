@@ -12,3 +12,6 @@ Sets up [vimified](https://github.com/zaiste/vimified) with [solarized-dark](htt
 ## tmux
 - To enable the new configuration file, use `tmux source ~/.tmux.conf`
 - To enable the changes you make to configuration file `Ctrl + B` then `Shift + I`
+
+## bash
+- Sets up the bash profile to show the current directory and the git branch you are on.
