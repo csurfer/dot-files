@@ -16,4 +16,8 @@ else
     . ~/.git-completion.bash
 fi
 
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+
 export PS1='\u@\h \[\033[32m\]\w\[\033[33m\]$(__git_ps1 " (%s)")\[\033[00m\] $ '
