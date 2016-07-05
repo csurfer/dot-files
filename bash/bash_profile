@@ -5,14 +5,14 @@ COMPLETION_URL=$BASE'git-completion.bash'
 if [ -f ~/.git-prompt.sh ]; then
     . ~/.git-prompt.sh
 else
-    curl -o ~/.git-prompt.sh $PROMPT_URL > /dev/null 2>&1
+    curl -o ~/.git-prompt.sh $PROMPT_URL &> /dev/null
     . ~/.git-prompt.sh
 fi
 
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 else
-    curl -o ~/.git-completion.bash $COMPLETION_URL > /dev/null 2>&1
+    curl -o ~/.git-completion.bash $COMPLETION_URL &> /dev/null
     . ~/.git-completion.bash
 fi
 
@@ -20,4 +20,13 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
+mkdir -p $HOME/.logs
+prompt_command () {
+    TODAY=$(date "+%Y-%m-%d")
+    BASH_LOGS="$HOME/.logs/bash-history-$TODAY.log"
+    if [ "$(id -u)" -ne 0 ]; then
+        echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> $BASH_LOGS
+    fi
+}
+export PROMPT_COMMAND=prompt_command
 export PS1='\u@\h \[\033[32m\]\w\[\033[33m\]$(__git_ps1 " (%s)")\[\033[00m\] $ '
