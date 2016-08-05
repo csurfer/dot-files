@@ -1,0 +1,23 @@
+# Safe file management aliases.
+alias cp='cp -iv'
+alias rm='rm -i'
+alias mv='mv -i'
+
+# Quick directory movement.
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Rsync changed git files.
+pushChangedGitFiles () {
+    # Check if a git repository
+    if [ ! -d .git ]; then
+        echo "[INFO] Not a git repository."
+        return
+    fi
+    if [ -z "$1" ]; then
+        echo "[INFO] Rsync destination not specified."
+        return
+    fi
+    git status -s | awk '{print $2}' | xargs -J % rsync -aRP % $1
+}
