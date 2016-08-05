@@ -8,16 +8,19 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# Rsync changed git files.
+# Push changed git files using rsync.
 pushChangedGitFiles () {
     # Check if a git repository
     if [ ! -d .git ]; then
         echo "[INFO] Not a git repository."
         return
     fi
+    # Check if the target information is provided.
     if [ -z "$1" ]; then
         echo "[INFO] Rsync destination not specified."
         return
     fi
+    # Fetch the files changed from git and rsync them to target.
+    # Will ask for ssh auth if target is remote.
     git status -s | awk '{print $2}' | xargs -J % rsync -aRP % $1
 }
