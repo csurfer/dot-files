@@ -1,26 +1,42 @@
 # Safe file management aliases.
-alias cp='cp -iv'
-alias rm='rm -i'
-alias mv='mv -i'
+alias cp="cp -iv"
+alias rm="rm -i"
+alias mv="mv -i"
 
 # Quick directory movement.
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# Git aliases.
+alias g="git"
+# Lists the branches which match the regex.
+gb () {
+    g branch --list $@
+}
+# Pretty prints the git log as a tree.
+gl () {
+    g log --pretty=format:"%h | %<(20)%an | %s"
+}
 
 # Push changed git files using rsync.
-pushChangedGitFiles () {
-    # Check if a git repository
+push_git_files () {
+    # Check if current directory is a git repository
     if [ ! -d .git ]; then
         echo "[INFO] Not a git repository."
         return
     fi
     # Check if the target information is provided.
+    # This can be a directory on same system or a different system.
     if [ -z "$1" ]; then
         echo "[INFO] Rsync destination not specified."
         return
     fi
     # Fetch the files changed from git and rsync them to target.
     # Will ask for ssh auth if target is remote.
-    git status -s | awk '{print $2}' | xargs -J % rsync -aRP % $1
+    if [ `uname` == "Linux" ]; then
+        git status -s | awk "{print $2}" | xargs -I % rsync -aRP % $1
+    else
+        git status -s | awk "{print $2}" | xargs -J % rsync -aRP % $1
+    fi
 }

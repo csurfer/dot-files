@@ -1,7 +1,9 @@
-BASE='https://raw.githubusercontent.com/git/git/master/contrib/completion/'
-PROMPT_URL=$BASE'git-prompt.sh'
-COMPLETION_URL=$BASE'git-completion.bash'
+# git-prompt and git-completion script location urls.
+BASE="https://raw.githubusercontent.com/git/git/master/contrib/completion/"
+PROMPT_URL=$BASE"git-prompt.sh"
+COMPLETION_URL=$BASE"git-completion.bash"
 
+# (Download if needed automatically) Source git-prompt script.
 if [ -f ~/.git-prompt.sh ]; then
     . ~/.git-prompt.sh
 else
@@ -9,6 +11,7 @@ else
     . ~/.git-prompt.sh
 fi
 
+# (Download if needed automatically) Source git-completion script.
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 else
@@ -16,10 +19,13 @@ else
     . ~/.git-completion.bash
 fi
 
+# Add bash_aliases to bashrc and source bashrc.
 if [ -f ~/.bashrc ]; then
+    echo "if [ -f ~/.bash_aliases ]; then . ~/.bash_aliases; fi" >> ~/.bashrc
     . ~/.bashrc
 fi
 
+# Log all the commands to a log file for future references.
 mkdir -p $HOME/.logs
 prompt_command () {
     TODAY=$(date "+%Y-%m-%d")
@@ -28,5 +34,7 @@ prompt_command () {
         echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> $BASH_LOGS
     fi
 }
+
+# Set the command prompt.
 export PROMPT_COMMAND=prompt_command
-export PS1='\u@\h \[\033[32m\]\w\[\033[33m\]$(__git_ps1 " (%s)")\[\033[00m\] $ '
+export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]$(__git_ps1 " (%s)")\[\033[00m\] $ "
