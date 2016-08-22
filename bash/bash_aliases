@@ -1,8 +1,15 @@
 # ls aliases
-alias l="ls"
-alias ls="ls --color"
-alias ll="ls -lh --color"
-alias la="ls -lA --color"
+if [ `uname` == "Linux" ]; then
+    alias l="ls"
+    alias ls="ls --color"
+    alias ll="ls -lh --color"
+    alias la="ls -lA --color"
+else
+    alias l="ls"
+    alias ls="ls -G"
+    alias ll="ls -lhG"
+    alias la="ls -lAG"
+fi
 
 # Safe file management aliases.
 alias cp="cp -iv"
