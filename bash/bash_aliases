@@ -21,6 +21,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+# tumx aliases.
+alias tma="tmux attach-session -t"
+
 # History search.
 alias grep="grep --color=auto"
 # Searches the logged history.
@@ -81,3 +84,8 @@ push_git_files () {
         git status -s | awk "{print $2}" | xargs -J % rsync -aRP % $1
     fi
 }
+
+# bash_extras file to store system specific shortcuts.
+if [ -f ~/.bash_extras ]; then
+    . ~/.bash_extras
+fi
