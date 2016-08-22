@@ -1,3 +1,9 @@
+# ls aliases
+alias l="ls"
+alias ls="ls --color"
+alias ll="ls -lh --color"
+alias la="ls -lA --color"
+
 # Safe file management aliases.
 alias cp="cp -iv"
 alias rm="rm -i"
@@ -8,6 +14,13 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+# History search.
+alias grep="grep --color=auto"
+# Searches the logged history.
+hs () {
+    grep -r $1 ~/.logs
+}
+
 # Git aliases.
 alias g="git"
 # Lists the branches which match the regex.
@@ -17,6 +30,27 @@ gb () {
 # Pretty prints the git log as a tree.
 gl () {
     g log --pretty=format:"%h | %<(20)%an | %s"
+}
+# Gets the current git status.
+gs () {
+    g status
+}
+
+# Copy files with path.
+copy_files () {
+    # Check if the target information is provided.
+    # This can be a directory on same system or a different system.
+    if [ -z "$2" ]; then
+        echo "[INFO] Rsync destination not specified."
+        return
+    fi
+    # Fetch the files changed from git and rsync them to target.
+    # Will ask for ssh auth if target is remote.
+    if [ `uname` == "Linux" ]; then
+        echo $1 | xargs -I % rsync -aRP % $2
+    else
+        echo $1 | xargs -J % rsync -aRP % $2
+    fi
 }
 
 # Push changed git files using rsync.
