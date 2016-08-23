@@ -21,11 +21,11 @@ if [ ! -d bundle/vundle ]; then
     git clone https://github.com/gmarik/vundle.git bundle/vundle
 fi
 
-vim +BundleInstall +qall 2>/dev/null
-
 # Copy *.vimrc files into vimified
 cp $INSTALLDIR/vim/local.vimrc .
 cp $INSTALLDIR/vim/after.vimrc .
+
+vim +BundleInstall +qall 2>/dev/null
 
 ##### Set up tmux #####
 
@@ -35,7 +35,8 @@ cp $INSTALLDIR/tmux/tmux.conf ~/.tmux.conf
 
 ##### Set up bash #####
 
-# Copy .bash_profile
+# Copy BASH files.
 cd
 cp $INSTALLDIR/bash/bash_profile ~/.bash_profile
+cp $INSTALLDIR/bash/bash_aliases ~/.bash_aliases
 source ~/.bash_profile
