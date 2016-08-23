@@ -19,10 +19,17 @@ else
     . ~/.git-completion.bash
 fi
 
-# Add bash_aliases to bashrc and source bashrc.
+# Source bashrc.
 if [ -f ~/.bashrc ]; then
-    echo "if [ -f ~/.bash_aliases ]; then . ~/.bash_aliases; fi" >> ~/.bashrc
     . ~/.bashrc
+fi
+# Source bash_aliases.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+# Source bash_extras.
+if [ -f ~/.bash_extras ]; then
+    . ~/.bash_extras
 fi
 
 # Log all the commands to a log file for future references.

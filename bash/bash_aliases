@@ -84,8 +84,3 @@ push_git_files () {
         git status -s | awk "{print $2}" | xargs -J % rsync -aRP % $1
     fi
 }
-
-# bash_extras file to store system specific shortcuts.
-if [ -f ~/.bash_extras ]; then
-    . ~/.bash_extras
-fi
