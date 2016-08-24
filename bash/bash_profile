@@ -44,4 +44,4 @@ prompt_command () {
 
 # Set the command prompt.
 export PROMPT_COMMAND=prompt_command
-export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]$(__git_ps1 " (%s)")\[\033[00m\] $ "
+export PS1='\u@\h \[\033[32m\]\w\[\033[33m\]$(__git_ps1 " (%s)")\[\033[00m\] $ '
