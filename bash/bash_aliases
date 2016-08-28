@@ -22,6 +22,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 # tumx aliases.
+alias tmux="tmux -2"
 alias tma="tmux attach-session -t"
 
 # History search.
