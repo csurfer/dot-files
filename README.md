@@ -4,7 +4,8 @@ These are the collection of my dot files, stored in this repository to ensure I 
 
 ## Installation steps
 - Download or clone the repository
-- From just outside the folder execute `sh ./dot-files/install.sh`
+- Set execution permission on `dot-files/install.sh`
+- From just outside the folder execute `./dot-files/install.sh`
 
 ## vim
 Sets up [vimified](https://github.com/zaiste/vimified) with [solarized-dark](https://github.com/altercation/vim-colors-solarized) theme
