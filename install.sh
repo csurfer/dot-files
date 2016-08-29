@@ -50,7 +50,7 @@ set_tmux () {
     # tmux checks before proceeding.
     if [ -z `which tmux` ]; then
         log "Please install tmux before continuing."
-	return
+        return
     fi
     if [ `tmux -V | cut -d' ' -f2` \< "2.0" ]; then
         log "tmux version > 1.9 required."
@@ -80,7 +80,7 @@ set_bash () {
     cp $INSTALLDIR/bash/bash_profile ~/.bash_profile
     if [ -f ~/.bash_aliases ]; then
         log "Copying pre-existing bash_aliases to bash_extras."
-	cat ~/.bash_aliases >> ~/.bash_extras
+        cat ~/.bash_aliases >> ~/.bash_extras
     else
         log "Add your changes to bash_extras if needed."
         touch ~/.bash_extras
