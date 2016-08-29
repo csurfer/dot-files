@@ -24,7 +24,7 @@ alias ....="cd ../../.."
 # tumx aliases.
 # Force tmux to use 256 colours.
 alias tmux="tmux -2"
-alias tma="tmux attach-session -t"
+alias tma="tmux -2 attach-session -t"
 
 # History search.
 alias grep="grep --color=auto"
