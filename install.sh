@@ -1,4 +1,6 @@
 #!/bin/bash
+# Installation script to set up your terminal with vimified(with solarized dark
+# theme), tmux in 256 colour and helpful bash profile.
 INSTALLDIR=${INSTALLDIR:-"$PWD/dot-files"}
 
 ##### Easy logging. #####
@@ -68,10 +70,6 @@ set_tmux () {
     # Copy .tmux.conf
     log "Copying tmux conf file."
     cp $INSTALLDIR/tmux/tmux.conf ~/.tmux.conf
-    log "To enable tmux settings:"
-    log "1. Start a tmux session."
-    log '2. Source tmux conf file as `tmux source ~/.tmux.conf`'
-    log '3. Ctrl + B followed by Shift + I'
 }
 
 ##### Set up bash. #####
@@ -89,7 +87,17 @@ set_bash () {
     source ~/.bash_profile
 }
 
+##### ToDo. #####
+show_help () {
+    log 'Follow the steps to enable the settings :'
+    log '0. Source bash profile with `source ~/.bash_profile`'
+    log '1. Start a tmux session with `tmux`'
+    log '2. Source tmux conf file as `tmux source ~/.tmux.conf`'
+    log '3. Ctrl + B followed by Shift + I'
+}
+
 ##### Call required functions. #####
 set_vim
 set_tmux
 set_bash
+show_help
