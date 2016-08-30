@@ -77,8 +77,12 @@ set_bash () {
     log "Copying bash files."
     cp $INSTALLDIR/bash/bash_profile ~/.bash_profile
     if [ -f ~/.bash_aliases ]; then
-        log "Copying pre-existing bash_aliases to bash_extras."
-        cat ~/.bash_aliases >> ~/.bash_extras
+        if diff $INSTALLDIR/bash/bash_aliases ~/.bash_aliases > /dev/null; then
+            log "Same file already exists. Not saving aliases to extras."
+        else
+            log "Copying pre-existing bash_aliases to bash_extras."
+            cat ~/.bash_aliases >> ~/.bash_extras
+        fi
     else
         log "Add your changes to bash_extras if needed."
         touch ~/.bash_extras
