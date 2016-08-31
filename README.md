@@ -19,4 +19,9 @@ git clone https://github.com/csurfer/dot-files.git
  - Sets [vimified](https://github.com/zaiste/vimified)
  - Sets [solarized-dark](https://github.com/altercation/vim-colors-solarized) theme
 - tmux
-- bash
+- bash (Your `~/.bashrc` is untouched. Your `~/.bash_aliases` will get copied to `~/.bash_extras`. Continue to use `~/.bash_extras` to store your bash shortcuts)
+ - Adds checks for `rm` and `cp` so that you do not lose files by mistake.
+ - Adds navigation shortcuts i,e `cd .. && cd .. && cd ..` translates to just doing `../../..`
+ - Logs all bash commands executed by you into `~/.logs` in date wise files. Searching something that you think you executed some time ago is as simple as `hs <search_phrase>`
+ - Adds `copy_files` rsync capability to copy directory subtrees from one place to another.
+ - Adds `push_git_files` rsync capability to move uncommitted git files around.
