@@ -16,7 +16,7 @@ git clone https://github.com/csurfer/dot-files.git
 
 ## What is set ?
 - vim
--- Sets [vimified](https://github.com/zaiste/vimified)
--- Sets [solarized-dark](https://github.com/altercation/vim-colors-solarized) theme
+ - Sets [vimified](https://github.com/zaiste/vimified)
+ - Sets [solarized-dark](https://github.com/altercation/vim-colors-solarized) theme
 - tmux
 - bash
