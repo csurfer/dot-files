@@ -4,7 +4,7 @@ Collection of dot-files I use to configure my vim, bash and tmux. Constructed ov
 ## Mac and Linux support
 Subtle command differences between Mac and Linux shell environments (rsync etc) are handled by the scripts.
 
-## Installation for the lazy
+## Installation
 - Download or clone the repository with 
 ``` bash
 git clone https://github.com/csurfer/dot-files.git
