@@ -15,10 +15,14 @@ git clone https://github.com/csurfer/dot-files.git
 - Enter a tmux session by using `tmux` and then `tmux source ~/.tmux.conf` to enable tmux settings.
 
 ## What is set ?
-- vim
- - Sets [vimified](https://github.com/zaiste/vimified)
- - Sets [solarized-dark](https://github.com/altercation/vim-colors-solarized) theme
-- tmux
+
+### vim
+ - Sets [vimified](https://github.com/zaiste/vimified).
+ - Sets [solarized-dark](https://github.com/altercation/vim-colors-solarized) theme.
+
+### tmux
+ - Sets [base16](https://github.com/chriskempson/base16) theme.
+ - Adds Date, Time and Devbox Name to the bottom right. 
 - bash (Your `~/.bashrc` is untouched. Your `~/.bash_aliases` will get copied to `~/.bash_extras`. Continue to use `~/.bash_extras` to store your bash shortcuts)
  - Adds checks for `rm` and `cp` so that you do not lose files by mistake.
  - Adds navigation shortcuts i,e `cd .. && cd .. && cd ..` translates to just doing `...`
