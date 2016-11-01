@@ -43,7 +43,7 @@ Note: Your `~/.bashrc` is untouched. Your `~/.bash_aliases` will get copied to `
 - Adds rsync capability to move uncommitted git files around.
   - `push_git_files <dest>` Copies the uncommitted git files from current directory to destination.
 
-#### Unlimited History
+### Unlimited History
 Logs all bash commands executed by you into `~/.logs` in date wise log files. Searching something that you think you executed some time ago is as simple as
 
 `hs <search_word>` or `hs '<search_phrase>'`
