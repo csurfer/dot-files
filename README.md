@@ -24,7 +24,7 @@ git clone https://github.com/csurfer/dot-files.git
 - Sets [base16](https://github.com/chriskempson/base16) which provides similar display in both iOS and Linux environments.
 - Adds Date, Time and Box name to the bottom right.
 
-![tmux-bottom-right](https://github.com/csurfer/dot-files/readme-res/tmux-br.png)
+![tmux-bottom-right](readme-res/tmux-br.png)
 
 ### bash shortcuts
 Note: Your `~/.bashrc` is untouched. Your `~/.bash_aliases` will get copied to `~/.bash_extras`. Continue to use `~/.bash_extras` to store your bash shortcuts)
@@ -54,6 +54,6 @@ Logging is done in the following format.
 
 Output looks like
 
-![hs-out](https://github.com/csurfer/dot-files/readme-res/hs-out.png)
+![hs-out](readme-res/hs-out.png)
 
 As the output is sorted you can use the history number as `!<number>` to execute the command again. This is not always supported as this tool specifically helps you to have an unlimited history of commands you executed and as a result if the command is not in your current bash history then `!<number>` wouldn't succeed.
