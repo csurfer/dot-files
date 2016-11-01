@@ -30,7 +30,7 @@ alias tma="tmux -2 attach-session -t"
 alias grep="grep --color=auto"
 # Searches the logged history.
 hs () {
-    grep -r $1 ~/.logs
+    grep -r "$1" ~/.logs
 }
 
 # Git aliases.
