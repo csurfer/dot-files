@@ -13,38 +13,45 @@ set_vim () {
     # Directory to set vim files.
     VIM=~/vimified
     log "Starting vim configuration."
-    # Execute the following only if vimified is not set.
+    # Download vimified only if it is not set.
     if [ ! -d ~/vimified ]; then
-        log "Setting up vimified."
         # Clone vimified.
+        log "Downloading vimified."
         git clone git://github.com/zaiste/vimified.git $VIM
-        # Create pointers to vim files.
-        log "Creating links."
-        ln -sfn $VIM ~/.vim
-        ln -sfn $VIM/vimrc ~/.vimrc
-        # Create directory to set up dependency bundles.
-        mkdir -p $VIM/bundle
-        # Create directory to set up temporary files.
-        mkdir -p $VIM/tmp/backup
-        mkdir -p $VIM/tmp/swap
-        mkdir -p $VIM/tmp/undo
-        # Clone vundle.
-        log "Setting up vundle packages."
-        git clone https://github.com/gmarik/vundle.git $VIM/bundle/vundle
-        # Basic package list.
-        cp $INSTALLDIR/vim/local.vimrc $VIM
-        # Install basic packages.
-        cd $VIM
-        vim +BundleInstall +qall
-        # Install solarized theme.
-        # This theme is only available after the bundle install.
-        cp $INSTALLDIR/vim/after.vimrc $VIM
-        # Move back to home folder.
-        cd
     else
-        log "vimified already set. Doing nothing."
+        log "vimified exists, hence not downloading."
     fi
-    log "vim configuration done."
+    # Set up vimified.
+    log "Setting up vimified."
+    # Create pointers to vim files.
+    log "Creating links."
+    ln -sfn $VIM ~/.vim
+    ln -sfn $VIM/vimrc ~/.vimrc
+    # Create directory to set up dependency bundles.
+    mkdir -p $VIM/bundle
+    # Create directory to set up temporary files.
+    mkdir -p $VIM/tmp/backup
+    mkdir -p $VIM/tmp/swap
+    mkdir -p $VIM/tmp/undo
+    # Download vundle only if it is not set.
+    if [ ! -d $VIM/bundle/vundle ]; then
+        # Clone vundle.
+        log "Downloading vundle."
+        git clone https://github.com/gmarik/vundle.git $VIM/bundle/vundle
+    else
+        log "vundle exists, hence not downloading."
+    fi
+    # Basic package list.
+    cp $INSTALLDIR/vim/local.vimrc $VIM
+    # Install basic packages.
+    cd $VIM
+    vim +BundleInstall +qall
+    # Install solarized theme.
+    # This theme is only available after the bundle install.
+    cp $INSTALLDIR/vim/after.vimrc $VIM
+    # Move back to home folder.
+    cd
+    log "vimified setup done."
 }
 
 ##### Set up tmux. #####
@@ -104,4 +111,7 @@ show_help () {
 set_vim
 set_tmux
 set_bash
+
+##### Show help. #####
+echo
 show_help
