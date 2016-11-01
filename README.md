@@ -34,8 +34,12 @@ git clone https://github.com/csurfer/dot-files.git
 
 ![tmux-bottom-right](readme-res/tmux-br.png)
 
-### bash shortcuts
+### bash
 Note: Your `~/.bashrc` is untouched. Your `~/.bash_aliases` will get copied to `~/.bash_extras`. Continue to use `~/.bash_extras` to store your bash shortcuts)
+- Adds `git branch` and `pwd` information to the command prompt.
+
+![prompt-branch](readme-res/prompt-branch.png)
+
 - Adds checks so that you do not lose files by mistake.
   - `rm` => `rm -i`
   - `cp` => `cp -iv`
