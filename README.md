@@ -19,11 +19,11 @@ git clone https://github.com/csurfer/dot-files.git
 ### vim
 - Sets [vimified](https://github.com/zaiste/vimified).
 - Sets [solarized-dark](https://github.com/altercation/vim-colors-solarized) theme.
-- Allows for [Google search](https://github.com/szw/vim-g) from vim command line.
+- Allows for __[Google search](https://github.com/szw/vim-g) from vim command line__.
   - `:Google <search_word>` To search the word.
   - `:Google '<search_phrase>'` To search the phrase.
   - Use `:Googlef` instead of `:Google` to do current file specific queries. i,e `:Googlef` search from a python file would return python specific results and so on.
-- Allows for [StackOverflow search](https://github.com/hienvd/vim-stackoverflow) from vim command line.
+- Allows for __[StackOverflow search](https://github.com/hienvd/vim-stackoverflow) from vim command line__.
   - `:SO <search_word>` To search the word.
   - `:SO '<search_phrase>'` To search the phrase.
   - Use `:SOf` instead of `:SO` to do current file specific queries. i,e `:SOf` search from a python file would return python specific results and so on.
