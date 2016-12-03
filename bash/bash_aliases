@@ -47,6 +47,14 @@ gl () {
 gs () {
     g status
 }
+# Checkout master
+gcm () {
+    g checkout master
+}
+# Pull + Rebase
+gpr () {
+    g pull --rebase
+}
 
 # Copy files with path.
 copy_files () {
