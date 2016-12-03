@@ -1,4 +1,7 @@
 # dot-files
+
+[![Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/csurfer/dot-files/master/LICENSE)
+
 Collection of dot-files I use to configure my vim, bash and tmux. Constructed over time, by adding snippets, written by me and by generous authors in various forums on the internet.
 
 ## iOS and Linux support
