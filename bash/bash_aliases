@@ -41,7 +41,7 @@ gb () {
 }
 # Pretty prints the git log as a tree.
 gl () {
-    g log --pretty=format:"%h | %<(20)%an | %s"
+    g log --pretty=format:"%Cred%h%Creset | %Cgreen%<(25)%an%Creset | %s"
 }
 # Gets the current git status.
 gs () {
