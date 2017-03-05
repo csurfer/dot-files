@@ -23,13 +23,13 @@ fi
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
-# Source bash_aliases.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 # Source bash_extras.
 if [ -f ~/.bash_extras ]; then
     . ~/.bash_extras
+fi
+# Source bash_aliases.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 
 # Log all the commands to a log file for future references.
