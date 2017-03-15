@@ -1,0 +1,32 @@
+{
+    "bootstrapped": true,
+    "installed_packages":
+    [
+        "Package Control",
+        "SFTP",
+        "SideBarEnhancements",
+
+        "Anaconda",
+        "isort",
+
+        "SublimeLinter",
+
+        "GitGutter",
+        "GitSavvy",
+        "GitStatusBar",
+
+        "Glue",
+        "SublimeXiki",
+
+        "Pretty JSON",
+
+        "Themr",
+        "Material Theme",
+        "Tomorrow Night Italics Color Scheme",
+
+        "requirementstxt",
+        "RestructuredText Improved",
+
+        "ASCII Decorator"
+    ]
+}
