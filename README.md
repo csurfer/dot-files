@@ -4,6 +4,10 @@
 
 Collection of dot-files I use to configure my vim, bash and tmux. Constructed over time, by adding snippets, written by me and by generous authors in various forums on the internet.
 
+## Deprecation Notice
+
+__This repository is deprecated and not updated anymore__. Instead use https://github.com/csurfer/dotfiles instead.
+
 ## iOS and Linux support
 Subtle command differences between iOS and Linux shell environments (rsync etc) are handled by the scripts.
 
